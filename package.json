@@ -1,0 +1,34 @@
+{
+  "name": "zapatos---nodejs",
+  "version": "1.0.0",
+  "description": "Zapatos - web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FractureDVL/Zapatos---NodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FractureDVL/Zapatos---NodeJS/issues"
+  },
+  "homepage": "https://github.com/FractureDVL/Zapatos---NodeJS#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-validator": "^6.14.0",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.3",
+    "passport-local": "^1.0.0",
+    "timeago": "^1.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
