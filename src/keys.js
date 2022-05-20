@@ -1,10 +1,11 @@
-module.export = {
+module.exports = {
+
     database: {
+        connectionLimit: 10,
         host: 'localhost',
-        user:'root',
+        user: 'root',
         password: '',
-        database:'shoes_lovers'
+        database: 'shoes_lovers'
     }
 
-
-}
+};
