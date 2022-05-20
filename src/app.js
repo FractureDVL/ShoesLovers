@@ -43,3 +43,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(app.get("port"));
 console.log("Server is in port", app.get("port"));
+console.log("App is running in http://localhost:4000/links/add");
+
