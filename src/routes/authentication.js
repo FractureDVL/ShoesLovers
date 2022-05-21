@@ -1,11 +1,12 @@
 const express = require('express');
+const { body } = require('express-validator');
 const router = express.Router();
 const passport = require('passport');
 
 /*Inicio de sesion*/
 router.get('/inicio', (req, res) => {
 
-    res.render('links/inicio');
+    res.render('links/auth/inicio');
 });
 router.post('/inicio', async (req, res) => {
 
@@ -21,15 +22,14 @@ router.post('/inicio', async (req, res) => {
 /*Registro de usuario*/
 router.get('/registro', (req, res) => {
 
-    res.render('links/registro');
+    res.render('links/auth/registro');
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
     successRedirect: '/perfil',
-    failureRedirect: '/signup',
+    failureRedirect: '/registro',
     failureFlash: true
-
-}));
+  }));
 
 router.get('/perfil', (req, res) => {
 
@@ -37,7 +37,5 @@ router.get('/perfil', (req, res) => {
 });
 
 // passport.deserializeUser((usr, done)=>{
-
-
 // })
 module.exports = router;

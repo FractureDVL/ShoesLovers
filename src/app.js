@@ -52,8 +52,9 @@ app.use((req, res, next) => {
 })
 
 //Routes
-app.use(require('./routes'));
-app.use('/links' ,require('./routes/authentication'));
+app.use(require('./routes/index'));
+app.use(require('./routes/authentication'));
+app.use('/links', require('./routes/authentication'));
 app.use('/links', require('./routes/links'));
 
 //Public
@@ -63,5 +64,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(app.get("port"));
 console.log("Server is in port", app.get("port"));
-console.log("App is running in http://localhost:4000/links/add");
+console.log("App is running in http://localhost:4000/links/index");
 

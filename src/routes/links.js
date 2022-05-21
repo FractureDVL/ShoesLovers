@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const pool = require('../database');
+
 
 /*Pagina principal*/
-router.get('/add', (req, res) => {
+router.get('/index', (req, res) => {
 
-    res.render('links/add');
+    res.render('links/index');
 });
 
 /*Seccion de hombres*/

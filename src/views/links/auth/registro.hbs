@@ -11,7 +11,7 @@
             <img src="/img/shoe.png" width="65" height="75" />
             <h3 class="mb-5">Regístrate en
               <b><a
-                  href="/links/add"
+                  href="/links/index"
                   class="text-decoration-none"
                 >ShoesLovers</a></b></h3>
 
@@ -20,8 +20,8 @@
               autocomplete="off"
               id="frmUsuario"
               name="frmUsuario"
-              action="/loquesea"
-              method="post"
+              action="/signup"
+              method="POST"
               onsubmit="return validarPassword()"
             >
               <div class="col-md-6 text-start">
@@ -365,7 +365,7 @@
                 <button
                   type="button"
                   class="btn btn-outline-dark btn-lg btn-block mx-3"
-                  onclick="location.href = '/links/add'"
+                  onclick="location.href = '/links/index'"
                 >Cancelar</button>
               </div>
             </form>
