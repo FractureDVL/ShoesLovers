@@ -10,14 +10,14 @@
                                     </b>
                             </h3>
 
-                                <form action="/links/inicio" method="post">
+                                <form action="/signin" method="post">
                                     <div class="form-outline mb-4">
                                         <input type="email" id="typeEmailX-2" name="email" class="form-control form-control-lg" />
                                         <label class="d-flex form-label" for="typeEmailX-2">Email</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="typePasswordX-2" name="password" class="form-control form-control-lg" />
+                                        <input type="password" id="typePasswordX-2" name="contrasena" class="form-control form-control-lg" />
                                         <label class="d-flex form-label" for="typePasswordX-2">Contraseña</label>
                                     </div>
 
@@ -28,7 +28,7 @@
                                             Recordar Contraseña
                                         </label>
                                     </div>
-
+                                    {{message}}
                                     <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Iniciar
                                         Sesión</button>
 

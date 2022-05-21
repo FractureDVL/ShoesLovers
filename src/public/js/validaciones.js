@@ -9,7 +9,7 @@ function validarPassword() {
 
     if (password1 != password2) {
         document.getElementById("divMensaje").innerHTML = "Error: Las contraseñas no coindicen. ";
-        alert("Error: Las contraseñas no coindicen.  " + password1 + " == " + password2);
+        alert("Error: Las contraseñas no coindicen.");
         frmUsuario.repetir_contrasena.focus();
         return false;
     }

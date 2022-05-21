@@ -8,15 +8,14 @@ router.get('/inicio', (req, res) => {
 
     res.render('links/auth/inicio');
 });
-router.post('/inicio', async (req, res) => {
 
-    const { email, password } = req.body
-    const newUser = {
-        email,
-        password
-    }
-
-    res.send('Recibido bro');
+router.post('/signin', (req, res, next) => {
+    console.log(req.body);
+    passport.authenticate('local.signin', {
+        successRedirect: '/perfil',
+        failureRedirect: '/inicio',
+        failureFlash: true
+    })(req, res, next);
 });
 
 /*Registro de usuario*/
@@ -29,7 +28,7 @@ router.post('/signup', passport.authenticate('local.signup', {
     successRedirect: '/perfil',
     failureRedirect: '/registro',
     failureFlash: true
-  }));
+}));
 
 router.get('/perfil', (req, res) => {
 
