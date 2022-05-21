@@ -1,5 +1,5 @@
 <!-- OPENING REGISTRO -->
-<section>
+<section class="bg-danger">
   <div class="container py-4 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-5 col-lg-6 col-xl-5">
@@ -20,7 +20,7 @@
               autocomplete="off"
               id="frmUsuario"
               name="frmUsuario"
-              action="/links/registro"
+              action="/loquesea"
               method="post"
               onsubmit="return validarPassword()"
             >
@@ -30,6 +30,7 @@
                   class="form-control"
                   id="nombre"
                   name="nombre"
+                  required
                 />
                 <label for="nombre" class="form-label text-muted">Nombre</label>
               </div>
@@ -39,6 +40,7 @@
                   class="form-control"
                   id="apellido"
                   name="apellido"
+                  required
                 />
                 <label
                   for="apellido"
@@ -51,6 +53,7 @@
                   class="form-control"
                   id="edad"
                   name="edad"
+                  required
                 />
                 <label for="edad" class="form-label text-muted">Edad</label>
               </div>
@@ -60,6 +63,7 @@
                   id="pais"
                   class="form-select"
                   aria-label="Default select example"
+                  required
                 >
                   <option value="AF">Afganistán</option>
                   <option value="AL">Albania</option>
@@ -304,6 +308,7 @@
                   class="form-control"
                   id="direccion"
                   name="direccion"
+                  required
                 />
                 <label
                   for="direccion"
@@ -316,6 +321,7 @@
                   class="form-control"
                   id="email"
                   name="email"
+                  required
                 />
                 <label for="email" class="form-label text-muted">Email</label>
               </div>
@@ -326,6 +332,7 @@
                   class="form-control"
                   id="contrasena"
                   name="contrasena"
+                  required
                 />
                 <label
                   for="inputEmail4"
@@ -338,6 +345,7 @@
                   class="form-control"
                   id="repetir_contrasena"
                   name="repetir_contrasena"
+                  required
                 />
                 <label
                   for="inputPassword4"
@@ -366,5 +374,5 @@
       </div>
     </div>
   </div>
-  <script src="js/validaciones.js"></script>
+  <script src="/js/validaciones.js"></script>
 </section>

@@ -25,7 +25,6 @@ router.get('/registro', (req, res) => {
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
-
     successRedirect: '/perfil',
     failureRedirect: '/signup',
     failureFlash: true

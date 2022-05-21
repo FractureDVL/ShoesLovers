@@ -2578,7 +2578,7 @@ textarea.form-control-lg {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  color-adjust: exact;
+  accent-color: exact;
 }
 
 .form-check-input[type="checkbox"] {
@@ -3338,14 +3338,14 @@ fieldset:disabled .btn {
 
 .btn-info {
   color: #fff;
-  background-color: #3b5998;
-  border-color: #3b5998;
+  background-color: #03d807;
+  border-color: #03d807;
 }
 
 .btn-info:hover {
   color: #fff;
-  background-color: #324c81;
-  border-color: #2f477a;
+  background-color: #00a200;
+  border-color: #00a200;
 }
 
 .btn-check:focus + .btn-info, .btn-info:focus {
@@ -3416,6 +3416,30 @@ fieldset:disabled .btn {
   color: #000;
   background-color: #ffc107;
   border-color: #ffc107;
+}
+
+.btn-sms {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+}
+
+.btn-sms:hover {
+  color: #fff;
+  background-color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+
+.btn-google {
+  color: #d11b28;
+  background-color: #fff;
+  border-color: #d11b28;
+}
+
+.btn-google:hover {
+  color: #fff;
+  background-color: #b21722;
+  border-color: #a71620;
 }
 
 .btn-danger {
