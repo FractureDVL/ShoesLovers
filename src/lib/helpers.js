@@ -10,7 +10,7 @@ helpers.encryptPassword = async(password) =>{
 
 };
 
-//Compara una contrasena encryptada con una de la base de datos
+//Compara una contrasena encryptada con una de la base de datos.
 helpers.matchPassword = async (password, savedPass) =>{
    try {
      return await bcrypt.compare(password , savedPass);
