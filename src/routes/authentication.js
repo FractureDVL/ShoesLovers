@@ -6,7 +6,7 @@ const passport = require('passport');
 /*Inicio de sesion*/
 router.get('/inicio', (req, res) => {
 
-    res.render('links/auth/inicio');
+    res.render('links/auth/inicio' ,{ layout: 'full-width' });
 });
 
 router.post('/signin', (req, res, next) => {
@@ -21,7 +21,7 @@ router.post('/signin', (req, res, next) => {
 /*Registro de usuario*/
 router.get('/registro', (req, res) => {
 
-    res.render('links/auth/registro');
+    res.render('links/auth/registro', { layout: 'full-width' });
 });
 
 router.post('/signup', passport.authenticate('local.signup', {
