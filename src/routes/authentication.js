@@ -32,7 +32,7 @@ router.post('/signup', passport.authenticate('local.signup', {
 
 router.get('/perfil', (req, res) => {
 
-    res.send('Aca va el perfil bro');
+    res.render('links/Jinja/perfil');
 });
 
 // passport.deserializeUser((usr, done)=>{
