@@ -2,7 +2,7 @@ const { body } = require('express-validator');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const pool = require('../database');
+const pool = require('../database/database');
 const helpers = require('./helpers');
 
 passport.use('local.signin', new LocalStrategy({

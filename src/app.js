@@ -5,7 +5,7 @@ const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
 const mysql_store = require('express-mysql-session');
-const { database } = require('./keys');
+const { database } = require('./database/keys');
 const  passport = require('passport');
 
 //initializations
