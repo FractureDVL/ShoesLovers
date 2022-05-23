@@ -3,13 +3,13 @@ module.exports = {
             if(req.isAuthenticated()){
                 return next();
             }
-            return res.redirect('auth/inicio');
+            return res.render('/inicio');
         },
         isNotLoggedIn (req, res, next){
             if(!req.isAuthenticated()){
                 return next();
             }
-            return res.redirect('Jinja/perfil');
+            return res.render('/perfil');
         }
 
 

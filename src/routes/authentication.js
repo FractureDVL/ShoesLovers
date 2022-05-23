@@ -2,10 +2,10 @@ const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
 const passport = require('passport');
-const { isLoggedIn } = require('../lib/auth');
+const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
 
 /*Inicio de sesion*/
-router.get('/inicio', (req, res) => {
+router.get('/inicio' , isNotLoggedIn, (req, res) => {
 
     res.render('links/auth/inicio', { layout: 'full-width' });
 });
@@ -13,14 +13,14 @@ router.get('/inicio', (req, res) => {
 router.post('/signin', (req, res, next) => {
     console.log(req.body);
     passport.authenticate('local.signin', {
-        successRedirect: 'Jinja/perfil',
-        failureRedirect: 'auth/inicio',
+        successRedirect: '/perfil',
+        failureRedirect: '/inicio',
         failureFlash: true
     })(req, res, next);
 });
 
 /*Registro de usuario*/
-router.get('/registro', (req, res) => {
+router.get('/registro', isNotLoggedIn, (req, res) => {
 
     res.render('links/auth/registro', { layout: 'full-width' });
 });
@@ -30,8 +30,8 @@ router.post('/signup', passport.authenticate('local.signup', {
     failureRedirect: '/registro',
     failureFlash: true
 }));
-
-router.get('/perfil', isLoggedIn, (req, res) => {
+/* Perfil del usuario y funciones para el usuario*/
+router.get('/perfil', (req, res) => {
 
     res.render('links/Jinja/perfil');
 });
@@ -41,6 +41,10 @@ router.get('/logout', (req, res) => {
     res.redirect('/inicio');
 });
 
+router.get('/cart', isLoggedIn, (req, res) => {
+
+    res.render('links/cart');
+});
 
 // passport.deserializeUser((usr, done)=>{
 // })

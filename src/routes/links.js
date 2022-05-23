@@ -25,10 +25,4 @@ router.get('/unisex', (req, res) => {
     res.render('links/unisex');
 });
 
-router.get('/cart', (req, res) => {
-
-    res.render('links/cart');
-});
-
-
 module.exports = router;
