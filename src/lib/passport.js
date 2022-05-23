@@ -24,12 +24,10 @@ passport.use('local.signin', new LocalStrategy({
             console.log('usuario'+ user.contrasena);
         } else {
             done(null, false, req.flash('message', 'Correo o contrasena incorrectas'));
-            console.log('Correo o contrasena incorrectas');
 
         }
     } else {
         return done(null, false, req.flash('message', 'Este usuario no existe'));
-        console.log('este usuario no existe');
     }
 }));
 

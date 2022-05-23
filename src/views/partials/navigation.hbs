@@ -52,6 +52,18 @@
         />
       </form>
 
+      {{#if user}}
+      <a href="/perfil"><button
+            type="button"
+            class="btn btn-warning m-2"
+          >Mi perfil</button></a>
+
+      <a href="/logout"><button
+            type="button"
+            class="btn btn-warning"
+          >Cerrar sesión</button></a>
+
+          {{else}}
       <div class="text-end">
         <a href="/inicio"><button
             type="button"
@@ -62,6 +74,8 @@
             class="btn btn-warning"
           >Sign-Up</button></a>
       </div>
+      {{/if}}
+      
     </div>
   </div>
 </nav>
