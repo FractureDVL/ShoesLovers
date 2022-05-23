@@ -13,8 +13,8 @@ router.get('/inicio', (req, res) => {
 router.post('/signin', (req, res, next) => {
     console.log(req.body);
     passport.authenticate('local.signin', {
-        successRedirect: '/perfil',
-        failureRedirect: '/inicio',
+        successRedirect: 'Jinja/perfil',
+        failureRedirect: 'auth/inicio',
         failureFlash: true
     })(req, res, next);
 });
@@ -38,7 +38,7 @@ router.get('/perfil', isLoggedIn, (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logOut();
-    res.render('/inicio');
+    res.redirect('/inicio');
 });
 
 
