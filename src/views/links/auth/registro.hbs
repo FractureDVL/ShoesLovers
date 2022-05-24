@@ -3,68 +3,29 @@
   <div class="container py-4 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-5 col-lg-6 col-xl-5">
-        <div
-          class="card shadow-lg shadow-3-strong"
-          style="border-radius: 1rem;"
-        >
+        <div class="card shadow-lg shadow-3-strong" style="border-radius: 1rem;">
           <div class="card-body p-5 pb-4 text-center">
             <img src="/img/shoe.png" width="65" height="75" />
             <h3 class="mb-5">Regístrate en
-              <b><a
-                  href="/links/index"
-                  class="text-decoration-none"
-                >ShoesLovers</a></b></h3>
+              <b><a href="/links/index" class="text-decoration-none">ShoesLovers</a></b>
+            </h3>
 
-            <form
-              class="row g-3"
-              autocomplete="off"
-              id="frmUsuario"
-              name="frmUsuario"
-              action="/signup"
-              method="POST"
-              onsubmit="return validarPassword()"
-            >
+            <form class="row g-3" autocomplete="off" id="frmUsuario" name="frmUsuario" action="/signup" method="POST"
+              onsubmit="return validarPassword()">
               <div class="col-md-6 text-start">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  name="nombre"
-                  required
-                />
+                <input type="text" class="form-control" id="nombre" name="nombre" required />
                 <label for="nombre" class="form-label text-muted">Nombre</label>
               </div>
               <div class="col-md-6 text-start">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="apellido"
-                  name="apellido"
-                  required
-                />
-                <label
-                  for="apellido"
-                  class="form-label text-muted"
-                >Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required />
+                <label for="apellido" class="form-label text-muted">Apellido</label>
               </div>
               <div class="col-md-6 text-start">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="edad"
-                  name="edad"
-                  required
-                />
+                <input type="number" class="form-control" id="edad" name="edad" required />
                 <label for="edad" class="form-label text-muted">Edad</label>
               </div>
               <div class="col-md-6 text-start">
-                <select
-                  name="pais"
-                  id="pais"
-                  class="form-select"
-                  aria-label="Default select example"
-                  required
-                >
+                <select name="pais" id="pais" class="form-select" aria-label="Default select example" required>
                   <option value="AF">Afganistán</option>
                   <option value="AL">Albania</option>
                   <option value="DE">Alemania</option>
@@ -303,54 +264,22 @@
                 <label for="pais" class="form-label text-muted">Pais</label>
               </div>
               <div class="col-md-12 text-start">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="direccion"
-                  name="direccion"
-                  required
-                />
-                <label
-                  for="direccion"
-                  class="form-label text-muted"
-                >Dirección</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" required />
+                <label for="direccion" class="form-label text-muted">Dirección</label>
               </div>
               <div class="col-md-12 text-start">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  required
-                />
+                <input type="email" class="form-control" id="email" name="email" required />
                 <label for="email" class="form-label text-muted">Email</label>
               </div>
 
               <div class="col-md-6 text-start">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="contrasena"
-                  name="contrasena"
-                  required
-                />
-                <label
-                  for="inputEmail4"
-                  class="form-label text-muted"
-                >Contraseña</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena" required />
+                <label for="inputEmail4" class="form-label text-muted">Contraseña</label>
               </div>
               <div class="col-md-6 text-start">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="repetir_contrasena"
-                  name="repetir_contrasena"
-                  required
-                />
-                <label
-                  for="inputPassword4"
-                  class="form-label text-muted"
-                >Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="repetir_contrasena" name="repetir_contrasena"
+                  required />
+                <label for="inputPassword4" class="form-label text-muted">Confirmar Contraseña</label>
               </div>
 
               <div class="text-decoration-none my-4">
@@ -360,15 +289,9 @@
               <hr class="my-3" />
 
               <div class="col-12">
-                <button
-                  type="submit"
-                  class="btn btn-outline-danger btn-lg btn-block mx-3"
-                >Registrarse</button>
-                <button
-                  type="button"
-                  class="btn btn-outline-dark btn-lg btn-block mx-3"
-                  onclick="location.href = '/links/index'"
-                >Cancelar</button>
+                <button type="submit" class="btn btn-outline-danger btn-lg btn-block mx-3">Registrarse</button>
+                <button type="button" class="btn btn-outline-dark btn-lg btn-block mx-3"
+                  onclick="location.href = '/links/index'">Cancelar</button>
               </div>
             </form>
           </div>

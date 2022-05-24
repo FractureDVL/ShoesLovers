@@ -1,40 +1,23 @@
 <!-- OPENING BARRA DE NAVEGACION -->
 <nav class="p-3 bg-danger text-white">
   <div class="container">
-    <div
-      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-    >
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/links/index" class="text-decoration-none">
         <div class="linked logo">
           <img src="/img/ShoesLovers.png" width="68" height="60" class="me-1" />
-          <img
-            src="/img/Logo ShoesLovers2.png"
-            width="118"
-            height="50"
-            class="me-3"
-          />
+          <img src="/img/Logo ShoesLovers2.png" width="118" height="50" class="me-3" />
         </div>
       </a>
 
-      <ul
-        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-      >
-        <li><a href="/links/index"><button
-              class="btn btn-outline-light border-danger me-2 fw-bold"
-              type="button"
-            >Home</button></a></li>
-        <li><a href="/links/hombre"><button
-              class="btn btn-outline-light border-danger me-2"
-              type="button"
-            >Hombre</button></a></li>
-        <li><a href="/links/mujer"><button
-              class="btn btn-outline-light border-danger me-2"
-              type="button"
-            >Mujer</button></a></li>
-        <li><a href="/links/unisex"><button
-              class="btn btn-outline-light border-danger me-2"
-              type="button"
-            >Unisex</button></a></li>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/links/index"><button class="btn btn-outline-light border-danger me-2 fw-bold"
+              type="button">Home</button></a></li>
+        <li><a href="/links/hombre"><button class="btn btn-outline-light border-danger me-2"
+              type="button">Hombre</button></a></li>
+        <li><a href="/links/mujer"><button class="btn btn-outline-light border-danger me-2"
+              type="button">Mujer</button></a></li>
+        <li><a href="/links/unisex"><button class="btn btn-outline-light border-danger me-2"
+              type="button">Unisex</button></a></li>
       </ul>
       <div class="pt-2 px-2">
         <a href="/links/cart" class="rounded btn-outline-light border-danger pt-3 px-1">
@@ -44,38 +27,21 @@
         </a>
       </div>
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input
-          type="search"
-          class="form-control form-control-dark rounded-0"
-          placeholder="Buscar..."
-          aria-label="Search"
-        />
+        <input type="search" class="form-control form-control-dark rounded-0" placeholder="Buscar..."
+          aria-label="Search" />
       </form>
 
       {{#if user}}
-      <a href="/perfil"><button
-            type="button"
-            class="btn btn-warning m-2"
-          >Mi perfil</button></a>
-
-      <a href="/logout"><button
-            type="button"
-            class="btn btn-warning"
-          >Cerrar sesión</button></a>
-
-          {{else}}
+      <a href="/perfil"><button type="button" class="btn rounded-circle"><img src="/img/perfil1.jfif"
+            class="bd-placeholder-img rounded-circle" width="50" height="50" /></button></a>
+      {{else}}
       <div class="text-end">
-        <a href="/inicio"><button
-            type="button"
-            class="btn btn-outline-dark border-danger text-light pb-2 px-3 me-2"
-          >Login</button></a>
-        <a href="/registro"><button
-            type="button"
-            class="btn btn-warning"
-          >Sign-Up</button></a>
+        <a href="/inicio"><button type="button"
+            class="btn btn-outline-dark border-danger text-light pb-2 px-3 me-2">Login</button></a>
+        <a href="/registro"><button type="button" class="btn btn-warning">Sign-Up</button></a>
       </div>
       {{/if}}
-      
+
     </div>
   </div>
 </nav>
