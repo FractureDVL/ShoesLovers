@@ -2,7 +2,7 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 const passport = require("passport");
-const { isLoggedIn, isNotLoggedIn } = require("../lib/auth");
+const { isLoggedIn, isNotLoggedIn, cartnt } = require("../lib/auth");
 
 /*Inicio de sesion*/
 router.get("/inicio", isNotLoggedIn, (req, res) => {
@@ -41,8 +41,12 @@ router.get("/logout", (req, res) => {
   res.redirect("/inicio");
 });
 
-router.get("/cart", isLoggedIn, (req, res) => {
+router.get("/cart", (req, res) => {
+  if(req.isAuthenticated()){
   res.render("links/cart");
+  }else{
+    res.redirect("/inicio");
+  }
 });
 
 // passport.deserializeUser((usr, done)=>{
