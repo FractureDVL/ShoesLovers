@@ -2,7 +2,7 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 const passport = require("passport");
-const { isLoggedIn, isNotLoggedIn, cartnt } = require("../lib/auth");
+const { isLoggedIn, isNotLoggedIn } = require("../lib/auth");
 
 /*Inicio de sesion*/
 router.get("/inicio", isNotLoggedIn, (req, res) => {
