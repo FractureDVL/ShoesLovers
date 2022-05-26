@@ -1,0 +1,55 @@
+<div class="container py-4 px-4 d-flex align-items-center justify-content-center">
+  <h3 class="pt-3"><b><u>Editar Datos del Usuario</u></b></h4>
+</div>
+<div class="container d-flex align-items-center justify-content-center mx-5 px-5 py-4">
+  <div class="card mb-3 mx-5 px-5 text-center border-light">
+    <div class="row g-0">
+      <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+        <img src="/img/perfil1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" />
+        <div class="d-flex align-items-center">
+          <h2>{{user.nombre}} {{user.apellido}}</h2>
+        </div>
+        <div class="d-flex align-items-center">
+          <p class="m-0">Hey there! I am using ShoesLovers xd</p>
+        </div>
+        <div class="d-flex justify-content-center pt-2">
+          <p><a class="btn btn-outline-success btn-lg mx-2" href="#">Guardar &raquo;</a></p>
+          <p><a class="btn btn-outline-danger btn-lg mx-2" href="/perfil">Cancelar &raquo;</a></p>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+        <div class="card-body">
+          <div class="d-flex flex-column align-items-center justify-content-center">
+            <h3 class="pb-3">Datos del Usuario</h3>
+            <div class="row text-start">
+              <div class="col-6 mb-4">
+                <input class="form-control" placeholder="{{user.nombre}}"></input>
+                <p class="px-2 text-muted">Nombre</p>
+              </div>
+              <div class="col-6 mb-4">
+                <input class="form-control" placeholder="{{user.apellido}}"></input>
+                <p class="px-2 text-muted">Apellido</p>
+              </div>
+              <div class="col-6 mb-4">
+                <input class="form-control" placeholder="{{user.edad}}"></input>
+                <p class="px-2 text-muted">Edad</p>
+              </div>
+              <div class="col-6 mb-4">
+                <input class="form-control" placeholder="{{user.direccion}}"></input>
+                <p class="px-2 text-muted">Dirección</p>
+              </div>
+              <div class="col-6 mb-4">
+                <input class="form-control" type="password"></input>
+                <p class="px-2 text-muted">Contraseña</p>
+              </div>
+              <div class="col-6 mb-4">
+                <input class="form-control" type="password"></input>
+                <p class="px-2 text-muted">Confirmar Contraseña</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

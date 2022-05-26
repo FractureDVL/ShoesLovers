@@ -36,6 +36,10 @@ router.get("/perfil", (req, res) => {
   res.render("links/Jinja/perfil");
 });
 
+router.get("/editar", (req, res) => {
+  res.render("links/Jinja/editar");
+});
+
 router.get("/logout", (req, res) => {
   req.logOut();
   res.redirect("/inicio");
