@@ -26,20 +26,18 @@
                             <!-- Checkbox -->
                             <div class="text-decoration-none my-4">
                                 <a href="/registro" class="">Aún no tienes cuenta? Registrarse</a>
+                                {{> message}}
                             </div>
-                            {{message}}
-                            <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Iniciar
+                            <button type="submit" class="btn btn-outline-danger btn-lg btn-block">Iniciar
                                 Sesión</button>
 
                             <hr class="my-4">
 
-                            <button type="button" class="btn btn-google btn-lg btn-block mb-2">Iniciar
-                                Sesión con Google</button>
-
-                            <button type="button" class="btn btn-sms btn-lg btn-block mb-2">Iniciar
-                                Sesión con SMS</button>
+                            <div class="d-flex justify-content-center">
+                                <img src="/img/fondoInicio.png" width="410px">
+                            </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>

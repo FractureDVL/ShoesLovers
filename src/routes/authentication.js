@@ -26,7 +26,7 @@ router.get("/registro", isNotLoggedIn, (req, res) => {
 router.post(
   "/signup",
   passport.authenticate("local.signup", {
-    successRedirect: "/perfil",
+    successRedirect: "/inicio",
     failureRedirect: "/registro",
     failureFlash: true,
   })
@@ -34,10 +34,6 @@ router.post(
 /* Perfil del usuario y funciones para el usuario*/
 router.get("/perfil", (req, res) => {
   res.render("links/Jinja/perfil");
-});
-
-router.get("/editar", (req, res) => {
-  res.render("links/Jinja/editar");
 });
 
 router.get("/logout", (req, res) => {

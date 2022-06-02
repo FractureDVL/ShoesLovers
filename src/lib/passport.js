@@ -31,8 +31,9 @@ passport.use(
             user,
             req.flash("success", "Usuario registrado con : " + user.nombre)
           );
-          console.log("usuario" + user.contrasena);
+          console.log("USUARIO CORRECTO" + user.contrasena);
         } else {
+          console.log("USUARIO INCORRECTO" + user.contrasena);
           done(
             null,
             false,
