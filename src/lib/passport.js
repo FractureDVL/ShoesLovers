@@ -71,8 +71,9 @@ passport.use(
         pais,
         direccion,
         email,
-        contrasena,
+        contrasena
       };
+      console.log(newUser);
       newUser.contrasena = await helpers.encryptPassword(contrasena);
       const result = await pool.query("INSERT INTO usuario SET ?", newUser);
       newUser.id = result.insertId;

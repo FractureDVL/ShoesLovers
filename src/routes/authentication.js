@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
 const upload = multer({ dest: "./src/public/profilepic" });
+const pool = require("../database/database");
 
 /*Inicio de sesion*/
 router.get("/inicio", isNotLoggedIn, (req, res) => {
@@ -30,7 +31,7 @@ router.get("/registro", isNotLoggedIn, (req, res) => {
 router.post(
   "/signup",
   passport.authenticate("local.signup", {
-    successRedirect: "/inicio",
+    successRedirect: "/perfil",
     failureRedirect: "/registro",
     failureFlash: true,
   })
@@ -41,11 +42,14 @@ router.get("/perfil", (req, res) => {
 });
 
 /*Cambiar foto de perfil*/
-router.post('/subir', upload.single('imagen'),(req,res)=>{
+router.post('/subir/:id', upload.single('imagen'), async (req,res)=>{
+  const { id } = req.params;
   console.log(req.file);
   fs.renameSync(req.file.path, req.file.path + '.' + req.file.mimetype.split('/')[1]);
-  res.send('Se ha subido');
+  const ola = "." + req.file.mimetype.split('/')[1];
+  await pool.query("UPDATE usuario SET imagen = ? WHERE id = ?", [req.file.filename + ola, id]);
 
+  res.redirect("/perfil");
 })
 /*Salir y loguearse*/
 router.get("/logout", (req, res) => {

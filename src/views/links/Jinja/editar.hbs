@@ -5,14 +5,14 @@
   <div class="card mb-3 mx-5 px-5 text-center border-light">
     <div class="row g-0">
       <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
-        <img src="/img/perfil1.jfif" class="bd-placeholder-img rounded-circle" width="140" height="140" />
+        <img src="/profilepic/{{user.imagen}}" class="bd-placeholder-img rounded-circle" width="140" height="140" />
         <div class="d-flex align-items-center">
           <h2>{{user.nombre}} {{user.apellido}}</h2>
         </div>
         <div class="d-flex align-items-center">
           <p class="m-0">Hey there! I am using ShoesLovers xd</p>
         </div>
-        <form action="/subir" method="post" class="my-3" enctype="multipart/form-data">
+        <form action="/subir/{{user.id}}" method="post" class="my-3" enctype="multipart/form-data">
           <input type="file" name="imagen">
           <br />
           <button type="submit" class="btn btn-lg btn-outline-primary mt-3">Cambiar Imagen</button>
@@ -22,7 +22,7 @@
         <div class="card-body">
           <div class="d-flex flex-column align-items-center justify-content-center">
             <h3 class="pb-3">Datos del Usuario</h3>
-            <form action="/links/Jinja/editar/{{user.id}}" method="post">
+            <form action="/subir/{{user.id}}" method="post">
               <div class="row text-start">
                 <div class="col-6 mb-4">
                   <input class="form-control" name="nombre" value="{{user.nombre}}"></input>
