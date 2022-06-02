@@ -2,7 +2,11 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 const passport = require("passport");
-const { isLoggedIn, isNotLoggedIn } = require("../lib/auth");
+const { isLoggedIn, isNotLoggedIn } = require("../lib/auth"); 
+const path = require('path');
+const fs = require('fs');
+const multer = require('multer');
+const upload = multer({ dest: "./src/public/profilepic" });
 
 /*Inicio de sesion*/
 router.get("/inicio", isNotLoggedIn, (req, res) => {
@@ -36,6 +40,14 @@ router.get("/perfil", (req, res) => {
   res.render("links/Jinja/perfil");
 });
 
+/*Cambiar foto de perfil*/
+router.post('/subir', upload.single('imagen'),(req,res)=>{
+  console.log(req.file);
+  fs.renameSync(req.file.path, req.file.path + '.' + req.file.mimetype.split('/')[1]);
+  res.send('Se ha subido');
+
+})
+/*Salir y loguearse*/
 router.get("/logout", (req, res) => {
   req.logOut();
   res.redirect("/inicio");
