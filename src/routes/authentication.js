@@ -65,6 +65,28 @@ router.get("/cart", (req, res) => {
   }
 });
 
+router.get("/Jinja/editar/:id", async (req, res) => {
+  const { id } = req.params;
+  const perfil = await pool.query("SELECT * FROM usuario WHERE id = ?", [id]);
+  console.log(perfil[0]);
+  res.render("links/Jinja/editar", { links: perfil[0] });
+});
+
+router.post("/Jinja/editar/:id", async (req, res) => {
+  const { id } = req.params;
+  const { nombre, apellido, edad, direccion } = req.body;
+
+  const editado = {
+    nombre,
+    apellido,
+    edad,
+    direccion,
+  };
+  console.log(editado);
+  await pool.query("UPDATE usuario set ? WHERE id = ?", [editado, id]);
+  res.redirect("/perfil");
+});
+
 // passport.deserializeUser((usr, done)=>{
 // })
 module.exports = router;

@@ -14,7 +14,7 @@
         </div>
         <form action="/subir/{{user.id}}" method="post" class="my-3" enctype="multipart/form-data">
           <input type="file" name="imagen">
-          <br />
+          <br/>
           <button type="submit" class="btn btn-lg btn-outline-primary mt-3">Cambiar Imagen</button>
         </form>
       </div>
@@ -22,7 +22,7 @@
         <div class="card-body">
           <div class="d-flex flex-column align-items-center justify-content-center">
             <h3 class="pb-3">Datos del Usuario</h3>
-            <form action="/subir/{{user.id}}" method="post">
+            <form action="/Jinja/editar/{{user.id}}" method="post">
               <div class="row text-start">
                 <div class="col-6 mb-4">
                   <input class="form-control" name="nombre" value="{{user.nombre}}"></input>
