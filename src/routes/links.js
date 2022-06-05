@@ -21,4 +21,7 @@ router.get("/unisex", (req, res) => {
   res.render("links/unisex");
 });
 
+router.get("/admin", (req, res) => {
+  res.render("links/admin/admin");
+});
 module.exports = router;

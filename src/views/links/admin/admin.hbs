@@ -1,0 +1,139 @@
+<div class="d-flex flex-column align-items-center justify-content-center m-4">
+    <div class="card text-center w-50">
+        <div class="card-body px-5">
+            <h5 class="fw-bold my-3">AGREGAR ZAPATOS</h5>
+            <br />
+            <form action="/addShoes" method="post">
+                <div class="form-outline mb-4">
+                    <select class="form-select form-select-lg" required>
+                        <option selected disabled hidden></option>
+                        <option value="10">Hot-Sales</option>
+                        <option value="20">Hombres</option>
+                        <option value="30">Mujeres</option>
+                        <option value="40">Unisex</option>
+                    </select>
+                    <label class="d-flex form-label text-muted" for="nombre">Categoria</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="nombre">Nombre</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="talla" name="talla" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="talla">Talla</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="cantidad" name="cantidad" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="cantidad">Cantidad en Inventario</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="precio" name="precio" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="precio">Precio</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                    <label for="formFile" class="form-label fw-bold">Imagen del Zapato</label>
+                    <br />
+                    <input type="file" name="imagen">
+                </div>
+                <button type="submit" class="btn btn-outline-primary my-3">Subir Imagen</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card text-center w-50 my-4">
+        <div class="card-body px-5">
+            <h5 class="fw-bold my-3">ELIMINAR ZAPATOS</h5>
+            <br />
+            <form action="/addShoes" method="post">
+                <div class="form-outline mb-4">
+                    <select class="form-select form-select-lg" required>
+                        <option selected disabled hidden></option>
+                        <option value="10">Hot-Sales</option>
+                        <option value="20">Hombres</option>
+                        <option value="30">Mujeres</option>
+                        <option value="40">Unisex</option>
+                    </select>
+                    <label class="d-flex form-label text-muted" for="nombre">Categoria</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="nombre">Nombre</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="talla" name="talla" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="talla">Talla</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="cantidad" name="cantidad" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="cantidad">Cantidad en Inventario</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="precio" name="precio" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="precio">Precio</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                    <label for="formFile" class="form-label fw-bold">Imagen del Zapato</label>
+                    <br />
+                    <input type="file" name="imagen">
+                </div>
+                <button type="submit" class="btn btn-outline-primary my-3">Subir Imagen</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card text-center w-50">
+        <div class="card-body px-5">
+            <h5 class="fw-bold my-3">ACTUALIZAR ZAPATOS</h5>
+            <br />
+            <form action="/addShoes" method="post">
+                <div class="form-outline mb-4">
+                    <select class="form-select form-select-lg" required>
+                        <option selected disabled hidden></option>
+                        <option value="10">Hot-Sales</option>
+                        <option value="20">Hombres</option>
+                        <option value="30">Mujeres</option>
+                        <option value="40">Unisex</option>
+                    </select>
+                    <label class="d-flex form-label text-muted" for="nombre">Categoria</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="nombre">Nombre</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="talla" name="talla" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="talla">Talla</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="cantidad" name="cantidad" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="cantidad">Cantidad en Inventario</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="precio" name="precio" class="form-control form-control-lg" required />
+                    <label class="d-flex form-label text-muted" for="precio">Precio</label>
+                </div>
+
+                <div class="form-outline mb-2">
+                    <label for="formFile" class="form-label fw-bold">Imagen del Zapato</label>
+                    <br />
+                    <input type="file" name="imagen">
+                </div>
+                <button type="submit" class="btn btn-outline-primary my-3">Subir Imagen</button>
+            </form>
+        </div>
+    </div>
+</div>
