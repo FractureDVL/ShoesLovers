@@ -55,55 +55,13 @@
         </div>
     </div>
 
-    <div class="card text-center w-50 my-5">
-        <div class="card-body px-5">
-            <h5 class="fw-bold my-3"><img src="/img/change_circle_FILL0_wght400_GRAD0_opsz48.svg"
-                    class="me-2 pb-1">ACTUALIZAR ZAPATOS</h5>
-            <br />
-            <form action="/actShoes" method="post">
-                <div class="form-outline mb-4">
-                    <select class="form-select form-select-lg" required>
-                        <option selected disabled hidden></option>
-                        <option value="10">Hot-Sales</option>
-                        <option value="20">Hombres</option>
-                        <option value="30">Mujeres</option>
-                        <option value="40">Unisex</option>
-                    </select>
-                    <label class="d-flex form-label text-muted" for="nombre">Categoria</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
-                    <label class="d-flex form-label text-muted" for="nombre">Nombre</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="number" id="cantidad" name="cantidad" class="form-control form-control-lg" required />
-                    <label class="d-flex form-label text-muted" for="cantidad">Cantidad en Inventario</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="number" id="precio" name="precio" class="form-control form-control-lg" required />
-                    <label class="d-flex form-label text-muted" for="precio">Precio</label>
-                </div>
-
-                <div class="form-outline mb-2">
-                    <label for="formFile" class="form-label fw-bold">Imagen del Zapato</label>
-                    <br />
-                    <input type="file" name="imagen">
-                </div>
-                <button type="submit" class="btn btn-outline-primary my-3">Cambiar Imagen</button>
-            </form>
-        </div>
-    </div>
-
     <div class="card text-center w-50">
         <div class="card-body px-5">
-            <h5 class="fw-bold my-3"><img src="/img/trash.svg" class="me-2 pb-1" width="41px" height="41px">ELIMINAR
+            <h5 class="fw-bold my-3"><img src="/img/change_circle_FILL0_wght400_GRAD0_opsz48.svg" class="me-2 pb-1" width="41px" height="41px">EDITAR
                 ZAPATOS</h5>
             <br />
             <form action="/addShoes" method="post">
-                <div class="form-outline mb-4">
+                <div class="form-outline mb-2">
                     <select class="form-select form-select-lg" required>
                         <option selected disabled hidden></option>
                         <option value="10">Hot-Sales</option>
@@ -113,11 +71,15 @@
                     </select>
                     <label class="d-flex form-label text-muted" for="nombre">Categoria</label>
                 </div>
-
                 <div class="form-outline mb-4">
-                    <input type="number" id="talla" name="talla" class="form-control form-control-lg" required />
-                    <label class="d-flex form-label text-muted" for="talla">Talla</label>
+                    <button type="button" class="btn btn-lg btn-outline-success mr-1">Buscar</button>
                 </div>
+
+                <!-- DATATABLE CON AJAX -->
+
+                
+
+                <!-- FIN DATATABLE CON AJAX -->
             </form>
         </div>
     </div>

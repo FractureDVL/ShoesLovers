@@ -97,8 +97,6 @@ router.post("/Jinja/editar/:id", async (req, res) => {
 router.post("/addShoes", shoespic.single("imagen") , async (req, res) => {
   const { categoria, nombre, talla, cantidad, precio } = req.body;
 
-  const id_zapato = categoria + talla;
-
   console.log(req.file);
   fs.renameSync(
     req.file.path,
@@ -108,8 +106,9 @@ router.post("/addShoes", shoespic.single("imagen") , async (req, res) => {
   const imagen = req.file.filename + "." + req.file.mimetype.split("/")[1];
 
   const zapato = {
-    id_zapato,
+    categoria,
     nombre,
+    talla,
     cantidad,
     precio,
     imagen
