@@ -1,99 +1,32 @@
-<div class="d-flex flex-column align-items-center justify-content-center m-4">
-    <img src="/img/AdminMode.png" class="my-1" width="500px">
-    <br />
-    <div class="card text-center w-50">
-        <div class="card-body px-5">
-            <h5 class="fw-bold my-3"><img src="/img/plus-circle-dotted.svg" class="me-2 pb-1" width="41px"
-                    height="41px">AGREGAR ZAPATOS</h5>
-            <br />
-            <form action="/addShoes" enctype="multipart/form-data" method="post">
-                <div class="form-outline mb-4">
-                    <select class="form-select form-select-lg" id="categoria" name="categoria" required>
-                        <option selected disabled hidden></option>
-                        <option value="10">Hot-Sales</option>
-                        <option value="20">Hombres</option>
-                        <option value="30">Mujeres</option>
-                        <option value="40">Unisex</option>
-                    </select>
-                    <label class="d-flex form-label text-muted" for="categoria">Categoria</label>
-                </div>
+<div class="container px-4 py-5 text-center">
+    <img src="/img/AdminMode.png" class="mt-1 mb-5" width="500px">
 
-                <div class="form-outline mb-4">
-                    <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" required />
-                    <label class="d-flex form-label text-muted" for="nombre">Nombre</label>
-                </div>
+    <div class="row my-4">
+        <div class="col-6">
+            <div class="text-center">
+                <h5 class="fw-bold my-3"><img src="/img/plus-circle-dotted.svg" class="me-2" width="41px"
+                        height="41px">AGREGAR ZAPATOS</h5>
 
-                <div class="form-outline mb-4">
-                    <select class="form-select form-select-lg" id="talla" name="talla" required>
-                        <option selected disabled hidden></option>
-                        <option value="1">38</option>
-                        <option value="2">39</option>
-                        <option value="3">40</option>
-                        <option value="4">41</option>
-                    </select>
-                    <label class="d-flex form-label text-muted" for="talla">Talla</label>
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <a href="/agregaradm" class="btn btn-lg btn-outline-success">
+                        Agregar
+                    </a>
                 </div>
-
-                <div class="form-outline mb-4">
-                    <input type="number" id="cantidad" name="cantidad" class="form-control form-control-lg" required />
-                    <label class="d-flex form-label text-muted" for="cantidad">Cantidad en Inventario</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="number" id="precio" name="precio" class="form-control form-control-lg" placeholder="$"
-                        required />
-                    <label class="d-flex form-label text-muted" for="precio">Precio</label>
-                </div>
-
-                <div class="form-outline mb-2">
-                    <label for="formFile" class="form-label fw-bold">Imagen del Zapato</label>
-                    <br />
-                    <input type="file" name="imagen">
-                </div>
-                <button type="submit" class="btn btn-outline-primary my-3">Subir Imagen</button>
-            </form>
+            </div>
         </div>
-    </div>
 
-    <div class="card text-center w-50">
-        <div class="card-body px-5">
-            <h5 class="fw-bold my-3"><img src="/img/change_circle_FILL0_wght400_GRAD0_opsz48.svg" class="me-2 pb-1"
-                    width="41px" height="41px">EDITAR
-                ZAPATOS</h5>
-            <br />
-            <form action="/addShoes" method="post">
-                <div class="form-outline mb-2">
-                    <select class="form-select form-select-lg" required>
-                        <option selected disabled hidden></option>
-                        <option value="10">Hot-Sales</option>
-                        <option value="20">Hombres</option>
-                        <option value="30">Mujeres</option>
-                        <option value="40">Unisex</option>
-                    </select>
-                    <label class="d-flex form-label text-muted" for="nombre">Categoria</label>
+        <div class="col-6">
+            <div class="text-center">
+                <h5 class="fw-bold my-3"><img src="/img/change_circle_FILL0_wght400_GRAD0_opsz48.svg" class="me-2"
+                        width="41px" height="41px">EDITAR
+                    ZAPATOS</h5>
+
+                <div class="d-grid gap-2 col-2 mx-auto">
+                    <a href="/editaradm" class="btn btn-lg btn-outline-primary">
+                        Editar
+                    </a>
                 </div>
-                <div class="form-outline mb-4">
-                    <button type="button" class="btn btn-lg btn-outline-success mr-1">Buscar</button>
-                </div>
-
-                <!-- DATATABLE CON AJAX -->
-
-                <div class="mb-2">
-                    <h5 class="fw-bold">Tabla de Zapatos Indexada</h5>
-                    <div class="table-responsive m-t-40">
-                        <table id="shoestable" cellspacing="0">
-
-                        </table>
-                    </div>
-                </div>
-
-                <script>
-                    let dt = $(document).ready(function () {
-                        $('#myTable').DataTable();
-                    });
-                </script>
-                <!-- FIN DATATABLE CON AJAX -->
-            </form>
+            </div>
         </div>
     </div>
 </div>

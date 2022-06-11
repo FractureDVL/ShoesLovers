@@ -94,7 +94,13 @@ router.post("/Jinja/editar/:id", async (req, res) => {
   res.redirect("/perfil");
 });
 
+router.get("/agregaradm", (req, res) => {
+  res.render("links/admin/agregaradm");
+});
 
+router.get("/editaradm", (req, res) => {
+  res.render("links/admin/editaradm");
+});
 
 router.post("/addShoes", shoespic.single("imagen"), async (req, res) => {
   const { categoria, nombre, talla, cantidad, precio } = req.body;

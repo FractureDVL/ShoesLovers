@@ -24,4 +24,13 @@ router.get("/unisex", (req, res) => {
 router.get("/admin", (req, res) => {
   res.render("links/admin/admin");
 });
+
+router.get("/agregaradm", (req, res) => {
+  res.render("links/admin/agregaradm");
+});
+
+router.get("/editaradm", (req, res) => {
+  res.render("links/admin/editaradm");
+});
+
 module.exports = router;
