@@ -127,14 +127,11 @@ router.post("/addShoes", shoespic.single("imagen"), async (req, res) => {
     );
     const imagen = req.file.filename + "." + req.file.mimetype.split("/")[1];
 
-    const rows = await pool.query("SELECT * FROM zapatos WHERE nombre = ?", [
-      nombre,
-    ]);
-
-    const id_zapato = categoria + talla + rows.length;
+    const rows = await pool.query("SELECT * FROM zapatos WHERE nombre = ?", [nombre]);
+    const serial = categoria + talla + rows.length;
 
     const zapato = {
-      id_zapato,
+      serial,
       categoria,
       nombre,
       talla,
