@@ -2,11 +2,12 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 const passport = require("passport");
-const { isLoggedIn, isNotLoggedIn } = require("../lib/auth"); 
-const path = require('path');
-const fs = require('fs');
-const multer = require('multer');
+const { isLoggedIn, isNotLoggedIn } = require("../lib/auth");
+const path = require("path");
+const fs = require("fs");
+const multer = require("multer");
 const upload = multer({ dest: "./src/public/profilepic" });
+const shoespic = multer({ dest: "./src/public/shoespic" });
 const pool = require("../database/database");
 
 /*Inicio de sesion*/
@@ -42,15 +43,21 @@ router.get("/perfil", (req, res) => {
 });
 
 /*Cambiar foto de perfil*/
-router.post('/subir/:id', upload.single('imagen'), async (req,res)=>{
+router.post("/subir/:id", upload.single("imagen"), async (req, res) => {
   const { id } = req.params;
   console.log(req.file);
-  fs.renameSync(req.file.path, req.file.path + '.' + req.file.mimetype.split('/')[1]);
-  const ola = "." + req.file.mimetype.split('/')[1];
-  await pool.query("UPDATE usuario SET imagen = ? WHERE id = ?", [req.file.filename + ola, id]);
+  fs.renameSync(
+    req.file.path,
+    req.file.path + "." + req.file.mimetype.split("/")[1]
+  );
+  const ola = "." + req.file.mimetype.split("/")[1];
+  await pool.query("UPDATE usuario SET imagen = ? WHERE id = ?", [
+    req.file.filename + ola,
+    id,
+  ]);
 
   res.redirect("/perfil");
-})
+});
 /*Salir y loguearse*/
 router.get("/logout", (req, res) => {
   req.logOut();
@@ -58,9 +65,9 @@ router.get("/logout", (req, res) => {
 });
 
 router.get("/cart", (req, res) => {
-  if(req.isAuthenticated()){
-  res.render("links/cart");
-  }else{
+  if (req.isAuthenticated()) {
+    res.render("links/cart");
+  } else {
     res.redirect("/inicio");
   }
 });
@@ -85,6 +92,32 @@ router.post("/Jinja/editar/:id", async (req, res) => {
   console.log(editado);
   await pool.query("UPDATE usuario set ? WHERE id = ?", [editado, id]);
   res.redirect("/perfil");
+});
+
+router.post("/addShoes", shoespic.single("imagen") , async (req, res) => {
+  const { categoria, nombre, talla, cantidad, precio } = req.body;
+
+  const id_zapato = categoria + talla;
+
+  console.log(req.file);
+  fs.renameSync(
+    req.file.path,
+    req.file.path + "." + req.file.mimetype.split("/")[1]
+  );
+  
+  const imagen = req.file.filename + "." + req.file.mimetype.split("/")[1];
+
+  const zapato = {
+    id_zapato,
+    nombre,
+    cantidad,
+    precio,
+    imagen
+  };
+
+  console.log(zapato);
+  pool.query("INSERT INTO zapatos SET ?", zapato);
+  res.redirect("/links/admin");
 });
 
 // passport.deserializeUser((usr, done)=>{
