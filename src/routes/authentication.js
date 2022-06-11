@@ -94,29 +94,52 @@ router.post("/Jinja/editar/:id", async (req, res) => {
   res.redirect("/perfil");
 });
 
-router.post("/addShoes", shoespic.single("imagen") , async (req, res) => {
+
+
+router.post("/addShoes", shoespic.single("imagen"), async (req, res) => {
   const { categoria, nombre, talla, cantidad, precio } = req.body;
 
-  console.log(req.file);
-  fs.renameSync(
-    req.file.path,
-    req.file.path + "." + req.file.mimetype.split("/")[1]
+  const comprobar = await pool.query(
+    "SELECT * FROM zapatos WHERE categoria = ? AND talla = ? AND nombre = ?",
+    [categoria, talla, nombre]
   );
-  
-  const imagen = req.file.filename + "." + req.file.mimetype.split("/")[1];
 
-  const zapato = {
-    categoria,
-    nombre,
-    talla,
-    cantidad,
-    precio,
-    imagen
-  };
+  if (comprobar.length > 0) {
+    const zapatorepet = comprobar[0];
+    console.log(zapatorepet);
+    const suma = parseInt(cantidad, 10) + parseInt(zapatorepet.cantidad, 10);
+    pool.query(
+      "UPDATE zapatos set cantidad = ? WHERE categoria = ? AND talla = ? AND nombre = ?",
+      [suma, categoria, talla, nombre]
+    );
+    res.redirect("/links/admin");
+  } else {
 
-  console.log(zapato);
-  pool.query("INSERT INTO zapatos SET ?", zapato);
-  res.redirect("/links/admin");
+    fs.renameSync(
+      req.file.path,
+      req.file.path + "." + req.file.mimetype.split("/")[1]
+    );
+    const imagen = req.file.filename + "." + req.file.mimetype.split("/")[1];
+
+    const rows = await pool.query("SELECT * FROM zapatos WHERE nombre = ?", [
+      nombre,
+    ]);
+
+    const id_zapato = categoria + talla + rows.length;
+
+    const zapato = {
+      id_zapato,
+      categoria,
+      nombre,
+      talla,
+      cantidad,
+      precio,
+      imagen,
+    };
+    console.log(zapato);
+    pool.query("INSERT INTO zapatos SET ?", zapato);
+    res.redirect("/links/admin");
+  }
 });
 
 // passport.deserializeUser((usr, done)=>{
