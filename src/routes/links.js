@@ -5,23 +5,25 @@ const path = require('path');
 
 /*Pagina principal*/
 router.get("/index", async (req, res) => {
-  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 10");
-  res.render("links/index", {zapato});
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE serial = 1030 AND nombre != 'Slvrs' AND nombre != 'MoonStrickers'");
+  const slvrs = await pool.query("SELECT * FROM zapatos WHERE nombre = 'Slvrs'");
+  const moonstrickers = await pool.query("SELECT * FROM zapatos WHERE nombre = 'MoonStrickers'");
+  res.render("links/index", {zapato, slvrs, moonstrickers});
 });
 
 /*Seccion de hombres*/
 router.get("/hombre", async (req, res) => {
-  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 20");
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE serial = 2030");
   res.render("links/hombre", {zapato});
 });
 /*Seccion de mujeres*/
 router.get("/mujer", async (req, res) => {
-  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 30");
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE serial = 3030");
   res.render("links/mujer", {zapato});
 });
 /*Seccion de unisex*/
 router.get("/unisex", async (req, res) => {
-  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 40");
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE serial = 4030");
   res.render("links/unisex", {zapato});
 });
 

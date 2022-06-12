@@ -53,11 +53,12 @@
 <hr class="mx-5" />
 
 <!-- OPENING JUMBOTRON -->
+{{#each slvrs}}
 <div class="container py-1">
   <div class="row align-items-md-stretch">
     <div class="col-md-6 col align-self-center">
       <div class="h-100 p-5 text-white bg-dark border rounded-3">
-        <h2>Slvrs</h2>
+        <h2>{{nombre}}</h2>
         <p>Tus Outfits nunca estarán completos sin el calzado perfecto. Pregunta
           por él que con seguridad para tí tenemos literalmente el mundo a tus
           pies.</p>
@@ -67,20 +68,22 @@
     <div class="col-md-6">
       <div class="h-100 p-5 bg-light">
         <center>
-          <img src="/img/Zapato2.png" height="230" width="370" />
+          <img src="/shoespic/{{imagen}}" height="230" width="370" />
         </center>
       </div>
     </div>
   </div>
 </div>
+{{/each}}
 <!-- ENDING JUMBOTRON -->
 
 <!-- OPENING JUMBOTRON -->
+{{#each moonstrickers}}
 <div class="container py-1">
   <div class="row align-items-md-stretch">
     <div class="col-md-6 col align-self-center">
       <div class="h-100 p-5 text-white bg-danger rounded-3">
-        <h2>MoonStrickers</h2>
+        <h2>{{nombre}}</h2>
         <p>Los zapatos deportivos que puedes lucir hasta en la luna.</p>
         <button class="btn btn-outline-light" type="button">Comprar Ahora</button>
       </div>
@@ -88,12 +91,13 @@
     <div class="col-md-6">
       <div class="h-100 p-5 bg-light">
         <center>
-          <img src="/img/moonstrickers.png" height="230" width="520" />
+          <img src="/shoespic/{{imagen}}" height="230" width="520" />
         </center>
       </div>
     </div>
   </div>
 </div>
+{{/each}}
 <!-- ENDING JUMBOTRON -->
 
 <!-- OPENING ALBUM -->
@@ -106,7 +110,7 @@
         {{#each zapato}}
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/shoespic/{{imagen}}" width="420px" height="200px"/>
+            <img src="/shoespic/{{imagen}}" width="420px" height="200px" />
             <div class="card-body">
               <p class="card-text">{{nombre}}</p>
               <div class="d-flex justify-content-between align-items-center">
