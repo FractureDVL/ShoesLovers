@@ -26,10 +26,11 @@
           </span>
         </a>
       </div>
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control form-control-dark rounded-0" placeholder="Buscar..."
-          aria-label="Search" />
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="post" action="/buscar">
+        <input type="text" name="nombre" class="form-control form-control-dark rounded-0" placeholder="Buscar..."/>
       </form>
+
       {{#if user}}
       <a href="/perfil"><button type="button" class="btn rounded-circle"><img src="/profilepic/{{user.imagen}}"
             class="bd-placeholder-img rounded-circle" width="50" height="50" /></button></a>

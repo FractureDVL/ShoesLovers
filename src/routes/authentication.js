@@ -120,14 +120,15 @@ router.post("/addShoes", shoespic.single("imagen"), async (req, res) => {
     );
     res.redirect("/links/admin");
   } else {
-
     fs.renameSync(
       req.file.path,
       req.file.path + "." + req.file.mimetype.split("/")[1]
     );
     const imagen = req.file.filename + "." + req.file.mimetype.split("/")[1];
 
-    const rows = await pool.query("SELECT * FROM zapatos WHERE nombre = ?", [nombre]);
+    const rows = await pool.query("SELECT * FROM zapatos WHERE nombre = ?", [
+      nombre,
+    ]);
     const serial = categoria + talla + rows.length;
 
     const zapato = {
@@ -143,6 +144,32 @@ router.post("/addShoes", shoespic.single("imagen"), async (req, res) => {
     pool.query("INSERT INTO zapatos SET ?", zapato);
     res.redirect("/links/admin");
   }
+});
+
+router.post("/buscar", async (req, res) => {
+  const { nombre } = req.body;
+  console.log(nombre);
+
+  const consulta = await pool.query(
+    "SELECT * FROM zapatos WHERE nombre REGEXP ?",
+    nombre
+  );
+
+  const filtro = nombre;
+
+  for (let i = 0; i < consulta.length; i++) {
+    if (consulta[i].talla == 1) {
+      consulta[i].talla = 38;
+    } else if (consulta[i].talla == 2) {
+      consulta[i].talla = 39;
+    } else if (consulta[i].talla == 3) {
+      consulta[i].talla = 40;
+    } else if (consulta[i].talla == 4) {
+      consulta[i].talla = 41;
+    }
+  }
+
+  res.render("links/buscar", { consulta, filtro });
 });
 
 // passport.deserializeUser((usr, done)=>{

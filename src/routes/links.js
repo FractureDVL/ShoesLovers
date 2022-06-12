@@ -27,6 +27,10 @@ router.get("/unisex", async (req, res) => {
   res.render("links/unisex", {zapato});
 });
 
+router.get("/buscar", (req, res) => {
+  res.render("links/buscar");
+});
+
 router.get("/admin", (req, res) => {
   res.render("links/admin/admin");
 });
