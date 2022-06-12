@@ -4,21 +4,25 @@ const pool = require("../database/database");
 const path = require('path');
 
 /*Pagina principal*/
-router.get("/index", (req, res) => {
-  res.render("links/index");
+router.get("/index", async (req, res) => {
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 10");
+  res.render("links/index", {zapato});
 });
 
 /*Seccion de hombres*/
-router.get("/hombre", (req, res) => {
-  res.render("links/hombre");
+router.get("/hombre", async (req, res) => {
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 20");
+  res.render("links/hombre", {zapato});
 });
 /*Seccion de mujeres*/
-router.get("/mujer", (req, res) => {
-  res.render("links/mujer");
+router.get("/mujer", async (req, res) => {
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 30");
+  res.render("links/mujer", {zapato});
 });
 /*Seccion de unisex*/
-router.get("/unisex", (req, res) => {
-  res.render("links/unisex");
+router.get("/unisex", async (req, res) => {
+  const zapato = await pool.query("SELECT * FROM zapatos WHERE categoria = 40");
+  res.render("links/unisex", {zapato});
 });
 
 router.get("/admin", (req, res) => {
