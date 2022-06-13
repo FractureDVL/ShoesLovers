@@ -3,14 +3,6 @@ const router = express.Router();
 const pool = require("../database/database");
 const path = require('path');
 
-/*Pagina principal*/
-router.get("/index", async (req, res) => {
-  const zapato = await pool.query("SELECT * FROM zapatos WHERE serial = 1030 AND nombre != 'Slvrs' AND nombre != 'MoonStrickers'");
-  const slvrs = await pool.query("SELECT * FROM zapatos WHERE nombre = 'Slvrs'");
-  const moonstrickers = await pool.query("SELECT * FROM zapatos WHERE nombre = 'MoonStrickers'");
-  res.render("links/index", {zapato, slvrs, moonstrickers});
-});
-
 /*Seccion de hombres*/
 router.get("/hombre", async (req, res) => {
   const zapato = await pool.query("SELECT * FROM zapatos WHERE serial = 2030");
